@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+
+	<servlet>
+		<servlet-name>FilterDemoServlet</servlet-name>
+		<servlet-class>com.za.tutorial.FilterDemoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FilterDemoServlet</servlet-name>
+		<url-pattern>/filterdemo</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>DummyFilter01</filter-name>
+		<filter-class>com.za.tutorial.DummyFilter01</filter-class>
+	</filter>
+		<filter>
+		<filter-name>DummyFilter02</filter-name>
+		<filter-class>com.za.tutorial.DummyFilter02</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>DummyFilter01</filter-name>
+		<servlet-name>FilterDemoServlet</servlet-name>
+	</filter-mapping>
+		<filter-mapping>
+		<filter-name>DummyFilter02</filter-name>
+		<servlet-name>FilterDemoServlet</servlet-name>
+	</filter-mapping>
+</web-app>
